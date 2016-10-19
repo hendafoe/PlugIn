@@ -160,7 +160,7 @@
                                 <frame key="frameInset" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Party1" id="Hno-k8-Qok">
+                                    <navigationItem title="Party1**- Admin" id="Hno-k8-Qok">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="DQP-7G-5IZ">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yeb-g5-1fa">
                                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
@@ -207,9 +207,9 @@
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vK5-Dz-PWx">
-                                <frame key="frameInset" minX="318" minY="456" width="41" height="30"/>
+                                <frame key="frameInset" minX="8" minY="72" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="**Add">
+                                <state key="normal" title="**Add friends">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
