@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A8460641DB73FDD000F4BCA /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8460621DB73FDD000F4BCA /* Main2.storyboard */; };
 		1ACD92001DAC7C1A005D92DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD91FF1DAC7C1A005D92DE /* AppDelegate.swift */; };
 		1ACD92021DAC7C1A005D92DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD92011DAC7C1A005D92DE /* ViewController.swift */; };
 		1ACD92051DAC7C1A005D92DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD92031DAC7C1A005D92DE /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A8460631DB73FDD000F4BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main2.storyboard; sourceTree = "<group>"; };
 		1ACD91FC1DAC7C1A005D92DE /* PlugIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlugIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACD91FF1DAC7C1A005D92DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACD92011DAC7C1A005D92DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				1ACD91FF1DAC7C1A005D92DE /* AppDelegate.swift */,
 				1ACD92011DAC7C1A005D92DE /* ViewController.swift */,
 				1ACD92031DAC7C1A005D92DE /* Main.storyboard */,
+				1A8460621DB73FDD000F4BCA /* Main2.storyboard */,
 				1ACD922D1DAC7C6D005D92DE /* Assets.xcassets */,
 				1ACD92061DAC7C1A005D92DE /* Assets.xcassets */,
 				1ACD92081DAC7C1A005D92DE /* LaunchScreen.storyboard */,
@@ -238,6 +241,7 @@
 				1ACD920A1DAC7C1A005D92DE /* LaunchScreen.storyboard in Resources */,
 				1ACD92071DAC7C1A005D92DE /* Assets.xcassets in Resources */,
 				1ACD922E1DAC7C6D005D92DE /* Assets.xcassets in Resources */,
+				1A8460641DB73FDD000F4BCA /* Main2.storyboard in Resources */,
 				1ACD92051DAC7C1A005D92DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +304,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A8460621DB73FDD000F4BCA /* Main2.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A8460631DB73FDD000F4BCA /* Base */,
+			);
+			name = Main2.storyboard;
+			sourceTree = "<group>";
+		};
 		1ACD92031DAC7C1A005D92DE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -507,6 +519,7 @@
 				1ACD92261DAC7C1B005D92DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ACD92271DAC7C1B005D92DE /* Build configuration list for PBXNativeTarget "PlugInTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +528,7 @@
 				1ACD92291DAC7C1B005D92DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ACD922A1DAC7C1B005D92DE /* Build configuration list for PBXNativeTarget "PlugInUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +537,7 @@
 				1ACD922C1DAC7C1B005D92DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
