@@ -704,22 +704,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alu-NB-Z1H">
-                                <frame key="frameInset" minX="22" minY="196" width="89" height="30"/>
+                                <frame key="frameInset" minX="16" minY="199" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Back to login">
-                                    <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.57497176536260786" green="1" blue="0.80715715533387089" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="oyd-rD-jrm" kind="show" id="LVq-vp-8TY"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.53725490196078429" green="0.47450980392156861" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yp-o4-eDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-964" y="824"/>
+            <point key="canvasLocation" x="-964" y="823.53823088455783"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nZU-GK-uIb">
@@ -839,8 +840,8 @@
         <image name="pgxpttrkd4g9zogtrgcj-1-37 (dragged).jpg" width="608" height="342"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Owu-IF-Vj8"/>
-        <segue reference="tjC-p2-kVa"/>
+        <segue reference="LVq-vp-8TY"/>
+        <segue reference="UiL-60-nTV"/>
         <segue reference="WxH-1Q-f1V"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
