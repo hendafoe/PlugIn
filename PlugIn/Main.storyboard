@@ -115,8 +115,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuQ-h3-UkK">
-                                <frame key="frameInset" minX="121" minY="95" width="98" height="30"/>
+                                <frame key="frameInset" minX="122" minY="95" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Invites">
                                     <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -253,6 +254,18 @@
                                                 </state>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="show" id="V1j-Ng-wEY"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="HZw-au-qaj">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TUa-5f-tUH">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Leave party">
+                                                    <color key="titleColor" red="0.33954326923076927" green="0.33954326923076927" blue="0.33954326923076927" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="uaL-fj-6uC"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -785,9 +798,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gC6-Q9-9Hh">
-                                <frame key="frameInset" minY="116" width="375" height="551"/>
+                                <frame key="frameInset" minY="112" width="375" height="555"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.88635817907692305" green="0.82033030796592243" blue="0.88032821919061921" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0w2-dH-u1p">
                                 <frame key="frameInset" minY="28" height="44"/>
@@ -840,16 +853,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNK-Fp-UVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="933"/>
+            <point key="canvasLocation" x="776.79999999999995" y="932.38380809595208"/>
         </scene>
     </scenes>
     <resources>
         <image name="pgxpttrkd4g9zogtrgcj-1-37 (dragged).jpg" width="608" height="342"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LVq-vp-8TY"/>
-        <segue reference="UiL-60-nTV"/>
-        <segue reference="WxH-1Q-f1V"/>
+        <segue reference="xXM-dk-C4i"/>
+        <segue reference="50D-Ia-gbC"/>
+        <segue reference="Owu-IF-Vj8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
