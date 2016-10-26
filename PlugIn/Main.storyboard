@@ -860,9 +860,9 @@
         <image name="pgxpttrkd4g9zogtrgcj-1-37 (dragged).jpg" width="608" height="342"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xXM-dk-C4i"/>
-        <segue reference="50D-Ia-gbC"/>
         <segue reference="Owu-IF-Vj8"/>
+        <segue reference="UiL-60-nTV"/>
+        <segue reference="50D-Ia-gbC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
