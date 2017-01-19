@@ -16,6 +16,8 @@
 		1ACD92201DAC7C1B005D92DE /* PlugInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD921F1DAC7C1B005D92DE /* PlugInUITests.swift */; };
 		1ACD922E1DAC7C6D005D92DE /* pic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD922D1DAC7C6D005D92DE /* pic.xcassets */; };
 		1AE148831DBD543A00B272E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE148821DBD543A00B272E8 /* Main.storyboard */; };
+		ED633E051E308691008AF31C /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633E041E308691008AF31C /* StartScreenViewController.swift */; };
+		ED633E071E308F0C008AF31C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633E061E308F0C008AF31C /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1ACD92211DAC7C1B005D92DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ACD922D1DAC7C6D005D92DE /* pic.xcassets */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = pic.xcassets; sourceTree = "<group>"; };
 		1AE148821DBD543A00B272E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		ED633E041E308691008AF31C /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		ED633E061E308F0C008AF31C /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				1ACD91FF1DAC7C1A005D92DE /* AppDelegate.swift */,
 				1ACD92011DAC7C1A005D92DE /* ViewController.swift */,
 				1AE148821DBD543A00B272E8 /* Main.storyboard */,
+				ED633E061E308F0C008AF31C /* LogInViewController.swift */,
+				ED633E041E308691008AF31C /* StartScreenViewController.swift */,
 				1ACD922D1DAC7C6D005D92DE /* pic.xcassets */,
 				1ACD92081DAC7C1A005D92DE /* LaunchScreen.storyboard */,
 				1ACD920B1DAC7C1A005D92DE /* Info.plist */,
@@ -268,8 +274,10 @@
 			files = (
 				1ACD92021DAC7C1A005D92DE /* ViewController.swift in Sources */,
 				1A16B40F1DC9A64800F4ECFE /* AddUserViewController.swift in Sources */,
+				ED633E071E308F0C008AF31C /* LogInViewController.swift in Sources */,
 				1ACD92001DAC7C1A005D92DE /* AppDelegate.swift in Sources */,
 				1A16B4111DC9B04B00F4ECFE /* AddPartyViewController.swift in Sources */,
+				ED633E051E308691008AF31C /* StartScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
