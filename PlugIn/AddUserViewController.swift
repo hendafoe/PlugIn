@@ -73,11 +73,12 @@ class AddUserViewController: UIViewController {
         do {
             let myHTMLString = try String(contentsOf: myURL, encoding: .ascii)
             userID = Int(myHTMLString)!
+            User.userID = userID
         } catch let error {
             print("Error: \(error)")
         }
         
-        //User.userID = 3
+    
         
         
         

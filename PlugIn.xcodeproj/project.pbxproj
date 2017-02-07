@@ -18,6 +18,10 @@
 		1AE148831DBD543A00B272E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE148821DBD543A00B272E8 /* Main.storyboard */; };
 		ED633E051E308691008AF31C /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633E041E308691008AF31C /* StartScreenViewController.swift */; };
 		ED633E071E308F0C008AF31C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633E061E308F0C008AF31C /* LogInViewController.swift */; };
+		ED633E091E3121E6008AF31C /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633E081E3121E6008AF31C /* HomeScreenViewController.swift */; };
+		ED97FEE71E41779500CBD1E6 /* AddPartyFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97FEE61E41779500CBD1E6 /* AddPartyFriendViewController.swift */; };
+		ED97FEE91E417E0C00CBD1E6 /* InvitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97FEE81E417E0C00CBD1E6 /* InvitesViewController.swift */; };
+		EDD32E2E1E416ACE006CB5C0 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD32E2D1E416ACE006CB5C0 /* PartyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		1AE148821DBD543A00B272E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED633E041E308691008AF31C /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		ED633E061E308F0C008AF31C /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		ED633E081E3121E6008AF31C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		ED97FEE61E41779500CBD1E6 /* AddPartyFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPartyFriendViewController.swift; sourceTree = "<group>"; };
+		ED97FEE81E417E0C00CBD1E6 /* InvitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitesViewController.swift; sourceTree = "<group>"; };
+		EDD32E2D1E416ACE006CB5C0 /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +117,13 @@
 				1A16B40E1DC9A64800F4ECFE /* AddUserViewController.swift */,
 				1ACD91FF1DAC7C1A005D92DE /* AppDelegate.swift */,
 				1ACD92011DAC7C1A005D92DE /* ViewController.swift */,
+				ED97FEE81E417E0C00CBD1E6 /* InvitesViewController.swift */,
+				ED97FEE61E41779500CBD1E6 /* AddPartyFriendViewController.swift */,
 				1AE148821DBD543A00B272E8 /* Main.storyboard */,
+				EDD32E2D1E416ACE006CB5C0 /* PartyViewController.swift */,
 				ED633E061E308F0C008AF31C /* LogInViewController.swift */,
 				ED633E041E308691008AF31C /* StartScreenViewController.swift */,
+				ED633E081E3121E6008AF31C /* HomeScreenViewController.swift */,
 				1ACD922D1DAC7C6D005D92DE /* pic.xcassets */,
 				1ACD92081DAC7C1A005D92DE /* LaunchScreen.storyboard */,
 				1ACD920B1DAC7C1A005D92DE /* Info.plist */,
@@ -275,9 +287,13 @@
 				1ACD92021DAC7C1A005D92DE /* ViewController.swift in Sources */,
 				1A16B40F1DC9A64800F4ECFE /* AddUserViewController.swift in Sources */,
 				ED633E071E308F0C008AF31C /* LogInViewController.swift in Sources */,
+				ED97FEE91E417E0C00CBD1E6 /* InvitesViewController.swift in Sources */,
+				EDD32E2E1E416ACE006CB5C0 /* PartyViewController.swift in Sources */,
 				1ACD92001DAC7C1A005D92DE /* AppDelegate.swift in Sources */,
 				1A16B4111DC9B04B00F4ECFE /* AddPartyViewController.swift in Sources */,
+				ED97FEE71E41779500CBD1E6 /* AddPartyFriendViewController.swift in Sources */,
 				ED633E051E308691008AF31C /* StartScreenViewController.swift in Sources */,
+				ED633E091E3121E6008AF31C /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

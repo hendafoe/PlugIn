@@ -39,6 +39,40 @@ class AddPartyViewController: UIViewController {
                 }
             }
         }
+        
+        //Get party info
+        var partyID = 0
+        let myURLString = "http://pluginstreaming.com/retrieveLastParty.php"
+        guard let myURL = URL(string: myURLString) else {
+            print("Error: \(myURLString) doesn't seem to be a valid URL")
+            return
+        }
+        
+        do {
+            let myHTMLString = try String(contentsOf: myURL, encoding: .ascii)
+            partyID = Int(myHTMLString)!
+            
+        } catch let error {
+            print("Error: \(error)")
+        }
+        
+        print(User.userID)
+        let userID = User.userID
+        let postString2 = "a=\(partyID)&b=\(userID)&c=1"
+        let request2 = NSMutableURLRequest(url: URL(string: "http://pluginstreaming.com/insertUserPartyRelation.php")!)
+        request2.httpMethod = "POST"
+        request2.httpBody = postString2.data(using: String.Encoding.utf8);
+        NSURLConnection.sendAsynchronousRequest(request2 as URLRequest, queue: OperationQueue.main)
+        {
+            (response, data, error) in
+            print(response)
+            if let HTTPResponse = response as? HTTPURLResponse {
+                let statusCode = HTTPResponse.statusCode
+                if statusCode == 200 {
+                    print("Insert successful")
+                }
+            }
+        }
     }
     
 

@@ -9,7 +9,7 @@
 import UIKit
 
 struct User {
-    let userID: Int
+    static var userID = 0
 }
 
 class StartScreenViewController: UIViewController {
@@ -34,13 +34,13 @@ class StartScreenViewController: UIViewController {
         }
         
         if(deviceExists == "true"){
-            let secondViewController = self.storyboard.instantiateViewControllerWithIdentifier("SecondViewController") as SecondViewController
-            self.navigationController.pushViewController(secondViewController, animated: true)
+            print("lets go")
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+            self.navigationController?.pushViewController(secondViewController, animated: true)
         }
         else{
-            let secondViewController = self.storyboard.instantiateViewControllerWithIdentifier("SecondViewController") as SecondViewController
-            self.navigationController.pushViewController(secondViewController, animated: true)
-            
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+            self.navigationController?.pushViewController(secondViewController, animated: true)
         }
 
 
