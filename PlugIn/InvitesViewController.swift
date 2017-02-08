@@ -79,7 +79,26 @@ class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewD
         } catch let error {
             print("Error: \(error)")
         }
+        
+        cell.acceptButton.tag = invites[indexPath.item]
+        cell.declineButton.tag = invites[indexPath.item]
+        
+        cell.acceptButton.addTarget(self, action: "acceptAction", forControlEvents: .touchUpInside)
+        cell.declineButton.addTarget(self, action: "declineAction", forControlEvents: .touchUpInside)
+        
         return cell
+    }
+    
+    @IBAction func acceptAction(sender: UIButton) {
+        
+        print(self.objects[sender.tag] as? String)
+
+        
+    }
+    @IBAction func declineAction(sender: UIButton) {
+        
+        print(self.objects[sender.tag] as? String)
+        
     }
 
 
