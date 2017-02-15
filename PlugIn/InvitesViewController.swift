@@ -9,17 +9,16 @@
 import UIKit
 
 class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet var invitesTable: UITableView!
     var invites: [Int] = []
+    @IBOutlet var invitesTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         invitesTable.delegate = self
         invitesTable.dataSource = self
-        invitesTable.register(UITableViewCell.self, forCellReuseIdentifier: "customcell")
-        
+        //invitesTable.register(TableViewCell.self, forCellReuseIdentifier: "customcell")
         
         let myURLString2 = "http://pluginstreaming.com/retrieveInvites.php?a=" + String(User.userID)
         guard let myURL2 = URL(string: myURLString2) else {
@@ -51,10 +50,10 @@ class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = invitesTable.dequeueReusableCell(withIdentifier: "customcell", for: indexPath as IndexPath)
-        
+        let cell: TableViewCell = invitesTable.dequeueReusableCell(withIdentifier: "customcell", for: indexPath as IndexPath) as! TableViewCell
+        let inviteNumString = String(invites[indexPath.item])
         var myHTMLString3 = ""
-        let myURLString3 = "http://pluginstreaming.com/retrievePartyFromInvite.php?a=" + String(invites[indexPath.item])
+        let myURLString3 = "http://pluginstreaming.com/retrievePartyFromInvite.php?a=" + inviteNumString
         guard let myURL3 = URL(string: myURLString3) else {
             print("Error: \(myURLString3) doesn't seem to be a valid URL")
             return cell
@@ -75,31 +74,20 @@ class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         do {
             let myHTMLString4 = try String(contentsOf: myURL4, encoding: .ascii)
-            cell.textLabel?.text = "Invite To: " + myHTMLString4
+            cell.cellTitle?.text = "Invite To: " + myHTMLString4
         } catch let error {
             print("Error: \(error)")
         }
         
-        cell.acceptButton.tag = invites[indexPath.item]
-        cell.declineButton.tag = invites[indexPath.item]
+        cell.acceptButton?.tag = Int(inviteNumString)!
+        cell.declineButton?.tag = Int(inviteNumString)!
         
-        cell.acceptButton.addTarget(self, action: "acceptAction", forControlEvents: .touchUpInside)
-        cell.declineButton.addTarget(self, action: "declineAction", forControlEvents: .touchUpInside)
+        cell.acceptButton?.addTarget(self, action: Selector("acceptAction"), for: .touchUpInside)
+        cell.declineButton?.addTarget(self, action: Selector("declineAction"), for: .touchUpInside)
         
         return cell
     }
-    
-    @IBAction func acceptAction(sender: UIButton) {
         
-        print(self.objects[sender.tag] as? String)
-
-        
-    }
-    @IBAction func declineAction(sender: UIButton) {
-        
-        print(self.objects[sender.tag] as? String)
-        
-    }
 
 
     override func didReceiveMemoryWarning() {
