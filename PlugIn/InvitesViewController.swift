@@ -45,15 +45,18 @@ class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return invites.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TableViewCell = invitesTable.dequeueReusableCell(withIdentifier: "customcell", for: indexPath as IndexPath) as! TableViewCell
+        cell.tableView? = invitesTable
         let inviteNumString = String(invites[indexPath.item])
         var myHTMLString3 = ""
         let myURLString3 = "http://pluginstreaming.com/retrievePartyFromInvite.php?a=" + inviteNumString
+        print("URL String: " + myURLString3)
         guard let myURL3 = URL(string: myURLString3) else {
             print("Error: \(myURLString3) doesn't seem to be a valid URL")
             return cell
@@ -81,9 +84,10 @@ class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.acceptButton?.tag = Int(inviteNumString)!
         cell.declineButton?.tag = Int(inviteNumString)!
+        /*
+        cell.acceptButton?.addTarget(self, action: "acceptAction:", for: .touchUpInside)
+        cell.declineButton?.addTarget(self, action: "declineAction:", for: .touchUpInside)*/
         
-        cell.acceptButton?.addTarget(self, action: Selector("acceptAction"), for: .touchUpInside)
-        cell.declineButton?.addTarget(self, action: Selector("declineAction"), for: .touchUpInside)
         
         return cell
     }
