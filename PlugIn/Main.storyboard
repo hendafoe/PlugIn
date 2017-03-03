@@ -277,9 +277,9 @@
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vK5-Dz-PWx">
-                                <frame key="frameInset" minX="318" minY="456" width="41" height="30"/>
+                                <frame key="frameInset" minX="281" minY="456" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="**Add">
+                                <state key="normal" title="**Add User">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -293,6 +293,16 @@
                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY1-hB-P3H">
+                                <frame key="frameInset" minX="16" minY="456" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Song">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dut-Pv-3NS" kind="show" identifier="InviteSegue" id="cD3-qg-waz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -531,10 +541,10 @@
             </objects>
             <point key="canvasLocation" x="-2070" y="-546"/>
         </scene>
-        <!--Title-->
+        <!--AddSongViewController-->
         <scene sceneID="zzy-Gj-Dke">
             <objects>
-                <viewController id="dut-Pv-3NS" customClass="ViewController" customModule="PlugIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dut-Pv-3NS" userLabel="AddSongViewController" customClass="AddSongViewController" customModule="PlugIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="71p-Cb-n3r"/>
                         <viewControllerLayoutGuide type="bottom" id="k6A-a3-zMQ"/>
@@ -563,11 +573,24 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JhG-KG-ZPF">
-                                <frame key="frameInset" minY="64" width="375" height="554"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5e-qY-ENC">
+                                <frame key="frameInset" minX="172" minY="346" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong:" destination="dut-Pv-3NS" eventType="touchUpInside" id="xWn-7v-8dv"/>
+                                    <segue destination="A9q-K1-vKa" kind="show" identifier="BackSegue" id="wxN-Oy-bC8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFr-N4-DRI">
+                                <frame key="frameInset" minX="58" minY="211" width="258" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -575,6 +598,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="songTitle" destination="PFr-N4-DRI" id="FRX-ff-WAG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4d-2E-cIE" sceneMemberID="firstResponder"/>
             </objects>
@@ -931,8 +957,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LVq-vp-8TY"/>
-        <segue reference="LvO-g2-Hhq"/>
-        <segue reference="tjC-p2-kVa"/>
+        <segue reference="rnX-ve-agT"/>
+        <segue reference="wxN-Oy-bC8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
