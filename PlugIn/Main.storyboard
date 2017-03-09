@@ -303,6 +303,16 @@
                                     <segue destination="dut-Pv-3NS" kind="show" identifier="InviteSegue" id="cD3-qg-waz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLo-9e-09v">
+                                <frame key="frameInset" minX="37" minY="88" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play/Pause">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPause:" destination="A9q-K1-vKa" eventType="touchUpInside" id="koL-fx-XhV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -956,9 +966,9 @@
         <image name="pgxpttrkd4g9zogtrgcj-1-37 (dragged).jpg" width="608" height="342"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LVq-vp-8TY"/>
-        <segue reference="rnX-ve-agT"/>
         <segue reference="wxN-Oy-bC8"/>
+        <segue reference="uaL-fj-6uC"/>
+        <segue reference="LVq-vp-8TY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
