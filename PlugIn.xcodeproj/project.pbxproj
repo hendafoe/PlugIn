@@ -43,6 +43,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EDA7435C1E7B76130034F3EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A16B40E1DC9A64800F4ECFE /* AddUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		1A16B4101DC9B04B00F4ECFE /* AddPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPartyViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +78,6 @@
 		ED633E081E3121E6008AF31C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		ED94E4791E528D3900DF2722 /* InvitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitesViewController.swift; sourceTree = "<group>"; };
 		ED97FEE61E41779500CBD1E6 /* AddPartyFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPartyFriendViewController.swift; sourceTree = "<group>"; };
-		EDCB334F1E6FCA74005F3429 /* ID3Edit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ID3Edit; sourceTree = "<group>"; };
 		EDD32E2D1E416ACE006CB5C0 /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		EDF992061E6530B300E9B02C /* AddSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +130,6 @@
 		1ACD91FE1DAC7C1A005D92DE /* PlugIn */ = {
 			isa = PBXGroup;
 			children = (
-				EDCB334F1E6FCA74005F3429 /* ID3Edit */,
 				ED94E4791E528D3900DF2722 /* InvitesViewController.swift */,
 				1A16B4101DC9B04B00F4ECFE /* AddPartyViewController.swift */,
 				1A16B40E1DC9A64800F4ECFE /* AddUserViewController.swift */,
@@ -167,6 +178,7 @@
 				1ACD91F81DAC7C19005D92DE /* Sources */,
 				1ACD91F91DAC7C19005D92DE /* Frameworks */,
 				1ACD91FA1DAC7C19005D92DE /* Resources */,
+				EDA7435C1E7B76130034F3EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

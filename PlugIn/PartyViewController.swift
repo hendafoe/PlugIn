@@ -10,18 +10,42 @@ import UIKit
 import AVFoundation
 //import ID3Edit
 
-class PartyViewController: UIViewController {
+class PartyViewController: UIViewController, AVAudioPlayerDelegate {
     var partyID = 0
     var player:AVPlayer?
     var playerItem:AVPlayerItem?
     
     var played = false
     
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var artistLabel: UILabel!
+    @IBOutlet var albumArt: UIImageView!
+    @IBOutlet var volumeSlider: UISlider!
+    
     @IBOutlet var navBar: UINavigationItem!
+    
+    func playerDidFinishPlaying(note: NSNotification) {
+        print("DONE!")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.title = String(partyID)
+        
+        
+        //Set party name
+        var myHTMLString2 = ""
+        let myURLString2 = "http://pluginstreaming.com/retrievePartyName.php?a=" + String(partyID)
+        print("Party Name URL String: " + myURLString2)
+        guard let myURL2 = URL(string: myURLString2) else {
+            print("Error: \(myURLString2) doesn't seem to be a valid URL")
+            return
+        }
+        do {
+            myHTMLString2 = try String(contentsOf: myURL2, encoding: .ascii)
+        } catch let error {
+            print("Error: \(error)")
+        }
+        navBar.title = String(myHTMLString2)
         
         //Set up song
         var myHTMLString3 = ""
@@ -53,11 +77,79 @@ class PartyViewController: UIViewController {
                 print("Error: \(error)")
             }
 
-            let url = URL(string: "http://pluginstreaming.com/wp-content/audio/" + myHTMLString4 + ".mp3")
+            let url = URL(string: "http://pluginstreaming.com/wp-content/audio/" + myHTMLString4.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! + ".mp3")
             print("URL String: " + String(describing: url))
             let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+
+            
+            
+            
+            
             player = AVPlayer(playerItem: playerItem)
+            player?.volume = 0.5
+        
+        
+            //Set artwork
+            var myHTMLString5 = ""
+            let myURLString5 = "http://pluginstreaming.com/retrieveSongArtwork.php?a=" + myHTMLString3
+            print("URL String: " + myURLString5)
+            guard let myURL5 = URL(string: myURLString5) else {
+                print("Error: \(myURLString5) doesn't seem to be a valid URL")
+                return
+            }
+            
+            do {
+                myHTMLString5 = try String(contentsOf: myURL5, encoding: .ascii)
+            } catch let error {
+                print("Error: \(error)")
+            }
+            
+            if let url = NSURL(string: myHTMLString5) {
+                if let data = NSData(contentsOf: url as URL) {
+                    albumArt.image = UIImage(data: data as Data)
+                }        
+            }
+            
+            //Set tile
+            var myHTMLString6 = ""
+            let myURLString6 = "http://pluginstreaming.com/retrieveSongTitle.php?a=" + myHTMLString3
+            print("URL String: " + myURLString6)
+            guard let myURL6 = URL(string: myURLString6) else {
+                print("Error: \(myURLString6) doesn't seem to be a valid URL")
+                return
+            }
+            
+            do {
+                myHTMLString6 = try String(contentsOf: myURL6, encoding: .ascii)
+            } catch let error {
+                print("Error: \(error)")
+            }
+            titleLabel.text = myHTMLString6
+            
+            
+            
+            //Set Artist
+            var myHTMLString7 = ""
+            let myURLString7 = "http://pluginstreaming.com/retrieveSongArtist.php?a=" + myHTMLString3
+            print("URL String: " + myURLString7)
+            guard let myURL7 = URL(string: myURLString7) else {
+                print("Error: \(myURLString7) doesn't seem to be a valid URL")
+                return
+            }
+            
+            do {
+                myHTMLString7 = try String(contentsOf: myURL7, encoding: .ascii)
+            } catch let error {
+                print("Error: \(error)")
+            }
+            artistLabel.text = myHTMLString7
+
         }
+    
+        
+        
         /*
         
         // Open the file
@@ -119,6 +211,7 @@ class PartyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        player = nil
         if segue.identifier == "InviteSegue"
         {
             if let destinationVC = segue.destination as? AddSongViewController {
@@ -145,6 +238,9 @@ class PartyViewController: UIViewController {
         }
     }
     
+    @IBAction func volumeSlide(_ sender: AnyObject) {
+        player!.volume = volumeSlider.value
+    }
     
     /*
     // MARK: - Navigation

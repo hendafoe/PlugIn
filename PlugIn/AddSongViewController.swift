@@ -38,7 +38,7 @@ class AddSongViewController: UIViewController {
         
         //Get song id
         var myHTMLString = ""
-        let myURLString = "http://pluginstreaming.com/retrieveSongFromName.php?a=" + songTitle.text!
+        let myURLString = "http://pluginstreaming.com/retrieveSongFromName.php?a=" + songTitle.text!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         print("URL String: " + myURLString)
         guard let myURL3 = URL(string: myURLString) else {
             print("Error: \(myURLString) doesn't seem to be a valid URL")
@@ -50,10 +50,33 @@ class AddSongViewController: UIViewController {
         } catch let error {
             print("Error: \(error)")
         }
+        
+        
+        var myHTMLString2 = ""
+        let myURLString2 = "http://pluginstreaming.com/retrieveLastSong.php?a=" + String(partyID)
+        print("URL String2: " + myURLString2)
+        guard let myURL4 = URL(string: myURLString2) else {
+            print("Error: \(myURLString2) doesn't seem to be a valid URL")
+            return
+        }
+        
+        do {
+            myHTMLString2 = try String(contentsOf: myURL4, encoding: .ascii)
+        } catch let error {
+            print("Error: \(error)")
+        }
+        
+        
+        var prevPos = 0
+        if(myHTMLString2 != "0 results")
+        {
+            prevPos = Int(myHTMLString2)!
+        }
+        
         print("Song ID: " + myHTMLString)
         print("Party ID: " + String(partyID))
         let userID = User.userID
-        let postString2 = "a=\(myHTMLString)&b=\(partyID)&c=1"
+        let postString2 = "a=\(partyID)&b=\(myHTMLString)&c=\(prevPos+1)"
         let request2 = NSMutableURLRequest(url: URL(string: "http://pluginstreaming.com/insertPartySong.php")!)
         request2.httpMethod = "POST"
         request2.httpBody = postString2.data(using: String.Encoding.utf8);
