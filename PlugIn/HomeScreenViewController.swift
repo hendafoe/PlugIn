@@ -10,6 +10,7 @@ import UIKit
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet var inviteNum: UILabel!
     @IBOutlet var greetingLabel: UILabel!
     @IBOutlet var partyTable: UITableView!
     var selectParty = 0
@@ -65,6 +66,34 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         partyTable.delegate = self
         partyTable.dataSource = self
         partyTable.register(UITableViewCell.self, forCellReuseIdentifier: "customcell")
+        
+        
+        
+        // Invite num
+        var invites: [Int] = []
+        let myURLString3 = "http://pluginstreaming.com/retrieveInvites.php?a=" + String(User.userID)
+        guard let myURL3 = URL(string: myURLString3) else {
+            print("Error: \(myURLString2) doesn't seem to be a valid URL")
+            return
+        }
+        do{
+            var myHTMLString3 = try String(contentsOf: myURL3, encoding: .ascii)
+            while(myHTMLString3.range(of: "<br>") != nil)
+            {
+                let range: Range<String.Index> = myHTMLString3.range(of: "<br>")!
+                let index = range.lowerBound
+            
+                let substring: String = myHTMLString3.substring(to: index)
+                print(substring)
+                invites.append(Int(substring)!)
+                myHTMLString3.removeSubrange(myHTMLString3.startIndex..<range.upperBound)
+            }
+            
+        } catch let error {
+            print("Error: \(error)")
+        }
+        inviteNum.text = String(invites.count)
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parties.count
@@ -82,7 +111,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         
         do {
             let myHTMLString3 = try String(contentsOf: myURL3, encoding: .ascii)
-            cell.textLabel?.text = myHTMLString3
+            cell.textLabel?.text = User.removeOptional(input: myHTMLString3)
         } catch let error {
             print("Error: \(error)")
         }

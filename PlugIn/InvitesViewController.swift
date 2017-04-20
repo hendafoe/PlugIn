@@ -77,7 +77,7 @@ class InvitesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         do {
             let myHTMLString4 = try String(contentsOf: myURL4, encoding: .ascii)
-            cell.cellTitle?.text = "Invite To: " + myHTMLString4
+            cell.cellTitle?.text = "Invite To: " + User.removeOptional(input: myHTMLString4)
         } catch let error {
             print("Error: \(error)")
         }

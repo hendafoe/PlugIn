@@ -74,7 +74,18 @@ class AddPartyFriendViewController: UIViewController {
             
             
         }
+        
+        self.performSegue(withIdentifier: "BackSegue", sender: self)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BackSegue"
+        {
+            if let destinationVC = segue.destination as? PartyViewController {
+                destinationVC.partyID = partyID
+            }
+        }
     }
 
     /*

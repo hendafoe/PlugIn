@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AddPartyViewController: UIViewController {
+class AddPartyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var partyName: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.partyName.delegate = self;
         // Do any additional setup after loading the view.
     }
 
@@ -73,9 +73,14 @@ class AddPartyViewController: UIViewController {
                 }
             }
         }
+        
+        
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     /*
     // MARK: - Navigation
 

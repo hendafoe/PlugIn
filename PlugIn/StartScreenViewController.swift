@@ -10,6 +10,17 @@ import UIKit
 
 struct User {
     static var userID = 0
+    
+    static func removeOptional(input: String) -> String
+    {
+        let start = input.index(input.startIndex, offsetBy: 10)
+        let end = input.index(input.endIndex, offsetBy: -2)
+        let range = start..<end
+        
+        var removed = input.substring(with: range)
+        print(removed)
+        return removed
+    }
 }
 
 class StartScreenViewController: UIViewController {
